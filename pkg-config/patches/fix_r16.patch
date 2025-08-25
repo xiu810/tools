@@ -1,0 +1,19 @@
+--- a/glib/glib/gdate.c	2014-02-09 01:57:06.000000000 +0800
++++ a/glib/glib/gdate.c	2025-08-25 10:27:17.859531930 +0800
+@@ -2416,6 +2416,9 @@
+ 
+ #endif
+ 
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Wformat-nonliteral"
++
+ /**
+  * g_date_strftime:
+  * @s: destination buffer
+@@ -2549,3 +2552,6 @@
+   return retval;
+ #endif
+ }
++
++#pragma GCC diagnostic pop
++
